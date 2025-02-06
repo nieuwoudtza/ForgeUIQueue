@@ -211,19 +211,23 @@ namespace ForgeUIQueue
                     await Task.Delay(500);
                 }
 
-                var payload = _payloads[0];
-                while (payload.Count != 0)
+                Payload payload;
+                if (_payloads.Count != 0)
                 {
-                    if (Info._paused)
+                    payload = _payloads[0];
+                    while (payload.Count != 0)
                     {
-                        break;
-                    }
+                        if (Info._paused)
+                        {
+                            break;
+                        }
 
-                    await Generate(payload);
-                    DecreasePayloadCount(payload.ID);
-                    if (_payloads.Count != 0)
-                    {
-                        payload = _payloads[0];
+                        await Generate(payload);
+                        DecreasePayloadCount(payload.ID);
+                        if (_payloads.Count != 0)
+                        {
+                            payload = _payloads[0];
+                        }
                     }
                 }
             }
