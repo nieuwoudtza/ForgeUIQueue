@@ -40,14 +40,14 @@
             this.cCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPrompts = new System.Windows.Forms.Label();
             this.txtPrompts = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblWidth = new System.Windows.Forms.Label();
             this.numWidth = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblHeight = new System.Windows.Forms.Label();
             this.numHeight = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSteps = new System.Windows.Forms.Label();
             this.numSteps = new System.Windows.Forms.NumericUpDown();
             this.txtPath = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblPath = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.numCount = new System.Windows.Forms.NumericUpDown();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -151,6 +151,7 @@
             // 
             this.lblPrompts.AutoSize = true;
             this.lblPrompts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPrompts.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrompts.Location = new System.Drawing.Point(12, 41);
             this.lblPrompts.Name = "lblPrompts";
             this.lblPrompts.Size = new System.Drawing.Size(54, 13);
@@ -170,15 +171,15 @@
             this.txtPrompts.TabIndex = 0;
             this.txtPrompts.WordWrap = false;
             // 
-            // label1
+            // lblWidth
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(169, 170);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Width:";
+            this.lblWidth.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblWidth.AutoSize = true;
+            this.lblWidth.Location = new System.Drawing.Point(169, 170);
+            this.lblWidth.Name = "lblWidth";
+            this.lblWidth.Size = new System.Drawing.Size(38, 13);
+            this.lblWidth.TabIndex = 0;
+            this.lblWidth.Text = "Width:";
             // 
             // numWidth
             // 
@@ -204,15 +205,15 @@
             0,
             0});
             // 
-            // label2
+            // lblHeight
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Height:";
+            this.lblHeight.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Location = new System.Drawing.Point(323, 170);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(41, 13);
+            this.lblHeight.TabIndex = 0;
+            this.lblHeight.Text = "Height:";
             // 
             // numHeight
             // 
@@ -238,15 +239,15 @@
             0,
             0});
             // 
-            // label3
+            // lblSteps
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(477, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Steps:";
+            this.lblSteps.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSteps.AutoSize = true;
+            this.lblSteps.Location = new System.Drawing.Point(477, 170);
+            this.lblSteps.Name = "lblSteps";
+            this.lblSteps.Size = new System.Drawing.Size(37, 13);
+            this.lblSteps.TabIndex = 0;
+            this.lblSteps.Text = "Steps:";
             // 
             // numSteps
             // 
@@ -283,14 +284,17 @@
             this.txtPath.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPath.Leave += new System.EventHandler(this.TxtPath_Leave);
             // 
-            // label4
+            // lblPath
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Path:";
+            this.lblPath.AutoSize = true;
+            this.lblPath.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.Location = new System.Drawing.Point(12, 15);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(32, 13);
+            this.lblPath.TabIndex = 0;
+            this.lblPath.Text = "Path:";
+            this.lblPath.Click += new System.EventHandler(this.LblPath_Click);
             // 
             // lblCount
             // 
@@ -379,11 +383,11 @@
             this.Controls.Add(this.numHeight);
             this.Controls.Add(this.numWidth);
             this.Controls.Add(this.lblCount);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSteps);
             this.Controls.Add(this.txtPrompts);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblHeight);
+            this.Controls.Add(this.lblWidth);
+            this.Controls.Add(this.lblPath);
             this.Controls.Add(this.lblPrompts);
             this.Controls.Add(this.dgvQueue);
             this.Controls.Add(this.btnQueue);
@@ -414,14 +418,14 @@
         private System.Windows.Forms.DataGridView dgvQueue;
         private System.Windows.Forms.Label lblPrompts;
         private System.Windows.Forms.TextBox txtPrompts;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.NumericUpDown numWidth;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHeight;
         private System.Windows.Forms.NumericUpDown numHeight;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSteps;
         private System.Windows.Forms.NumericUpDown numSteps;
         private System.Windows.Forms.TextBox txtPath;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.NumericUpDown numCount;
         private System.Windows.Forms.PictureBox picState;

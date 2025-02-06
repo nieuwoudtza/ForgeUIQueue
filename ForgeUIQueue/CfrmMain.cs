@@ -31,6 +31,10 @@ namespace ForgeUIQueue
 
         void Prepare()
         {
+#if DEBUG
+            Directory.SetCurrentDirectory(@"D:\C#\Projects\ForgeUIQueue\ForgeUIQueue\bin\Release");
+#endif
+
             typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, null, dgvQueue, new object[] { true });
 
             Info._main = this;
@@ -274,6 +278,15 @@ namespace ForgeUIQueue
 
             txtPrompts.Clear();
             txtPrompts.Focus();
+        }
+
+        private void LblPath_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Path.GetFullPath(txtPath.Text));
+            }
+            catch { }
         }
 
         private void LblPrompts_Click(object sender, EventArgs e)
